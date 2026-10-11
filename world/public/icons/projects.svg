@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="projects-title">
+  <title id="projects-title">Projects</title>
+  <defs>
+    <linearGradient id="tile" x1="18" y1="6" x2="77" y2="90" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#80bddd"/><stop offset="0.48" stop-color="#4d92c5"/><stop offset="1" stop-color="#28668f"/>
+    </linearGradient>
+    <radialGradient id="light" cx="17" cy="9" r="91" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.24"/><stop offset="0.62" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rim" x1="16" y1="6" x2="80" y2="90" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.72"/><stop offset="0.5" stop-color="#ffffff" stop-opacity="0.12"/><stop offset="1" stop-color="#111526" stop-opacity="0.24"/>
+    </linearGradient>
+    <filter id="tile-shadow" x="0" y="0" width="96" height="96" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="2" stdDeviation="1.6" flood-color="#0b1020" flood-opacity="0.24"/>
+    </filter>
+    <filter id="object-shadow" x="-35%" y="-35%" width="170%" height="185%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="2" stdDeviation="1.5" flood-color="#131126" flood-opacity="0.25"/>
+    </filter>
+    <clipPath id="tile-clip"><rect x="6" y="6" width="84" height="84" rx="21"/></clipPath>
+    <linearGradient id="folder-back" x1="23" y1="26" x2="69" y2="63" gradientUnits="userSpaceOnUse"><stop stop-color="#d2f1ff"/><stop offset="1" stop-color="#80bddc"/></linearGradient>
+    <linearGradient id="folder-front" x1="24" y1="37" x2="69" y2="73" gradientUnits="userSpaceOnUse"><stop stop-color="#b6e7fa"/><stop offset="0.5" stop-color="#79c5e8"/><stop offset="1" stop-color="#4ba2cb"/></linearGradient>
+  </defs>
+  <rect x="6" y="6" width="84" height="84" rx="21" fill="url(#tile)" filter="url(#tile-shadow)"/>
+  <g clip-path="url(#tile-clip)"><rect x="6" y="6" width="84" height="84" fill="url(#light)"/></g>
+  <rect x="6.5" y="6.5" width="83" height="83" rx="20.5" fill="none" stroke="url(#rim)"/>
+  <g filter="url(#object-shadow)">
+    <path d="M19 34Q19 27 26 27H38Q41 27 43 30L47 34H70Q77 34 77 41V66Q77 72 71 72H25Q19 72 19 66Z" fill="url(#folder-back)"/>
+    <path d="M23 35H72Q75 35 75 38V45H21V38Q21 35 23 35Z" fill="#e8f8ff"/>
+    <path d="M21 40H75Q79 40 78.5 44L75 68Q74.5 72 70 72H26Q21.5 72 21 68L17.5 44Q17 40 21 40Z" fill="url(#folder-front)"/>
+    <path d="M22 40.7H74" fill="none" stroke="#e3f6ff" stroke-width="1.4" stroke-linecap="round"/>
+    <path d="M26 69.5H69" fill="none" stroke="#2f83b0" stroke-opacity="0.3" stroke-linecap="round"/>
+  </g>
+</svg>

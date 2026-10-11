@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="resume-title">
+  <title id="resume-title">Resume</title>
+  <defs>
+    <linearGradient id="tile" x1="18" y1="6" x2="77" y2="90" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e8e5dc"/><stop offset="0.48" stop-color="#d0ccbf"/><stop offset="1" stop-color="#ada99b"/>
+    </linearGradient>
+    <radialGradient id="light" cx="17" cy="9" r="91" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.24"/><stop offset="0.62" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rim" x1="16" y1="6" x2="80" y2="90" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.72"/><stop offset="0.5" stop-color="#ffffff" stop-opacity="0.12"/><stop offset="1" stop-color="#111526" stop-opacity="0.24"/>
+    </linearGradient>
+    <filter id="tile-shadow" x="0" y="0" width="96" height="96" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="2" stdDeviation="1.6" flood-color="#0b1020" flood-opacity="0.24"/>
+    </filter>
+    <filter id="object-shadow" x="-35%" y="-35%" width="170%" height="185%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="2" stdDeviation="1.5" flood-color="#131126" flood-opacity="0.25"/>
+    </filter>
+    <clipPath id="tile-clip"><rect x="6" y="6" width="84" height="84" rx="21"/></clipPath>
+    <linearGradient id="document" x1="29" y1="19" x2="67" y2="77" gradientUnits="userSpaceOnUse"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#f7f4eb"/></linearGradient>
+    <linearGradient id="fold" x1="57" y1="20" x2="70" y2="34" gradientUnits="userSpaceOnUse"><stop stop-color="#e8e7e4"/><stop offset="1" stop-color="#c9cbc7"/></linearGradient>
+  </defs>
+  <rect x="6" y="6" width="84" height="84" rx="21" fill="url(#tile)" filter="url(#tile-shadow)"/>
+  <g clip-path="url(#tile-clip)"><rect x="6" y="6" width="84" height="84" fill="url(#light)"/></g>
+  <rect x="6.5" y="6.5" width="83" height="83" rx="20.5" fill="none" stroke="url(#rim)"/>
+  <g filter="url(#object-shadow)">
+    <path d="M29 19H57L71 33V72Q71 77 66 77H29Q24 77 24 72V24Q24 19 29 19Z" fill="url(#document)"/>
+    <path d="M57 19V29Q57 33 61 33H71Z" fill="url(#fold)"/>
+    <rect x="32" y="31" width="17" height="18" rx="3" fill="#a5b4bd"/>
+    <circle cx="40.5" cy="36.5" r="3" fill="#eef3f3"/>
+    <path d="M35 45Q35 39.5 40.5 39.5Q46 39.5 46 45" fill="#eef3f3"/>
+    <path d="M33 56H62M33 63H62M33 70H53" fill="none" stroke="#9a9f9f" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+</svg>

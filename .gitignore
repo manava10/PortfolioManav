@@ -1,0 +1,19 @@
+# Dependencies and generated builds
+node_modules/
+dist/
+
+# Local editor, operating system, and hosting state
+.idea/
+.DS_Store
+.openai/
+*.log
+
+# Local configuration; keep the shareable example
+.env
+.env.*
+!.env.example
+
+# Generated design-review images; retain the Markdown design notes
+/preview.jpg
+/design-review/*.jpg
+/design-review/*.png

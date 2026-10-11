@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="music-title">
+  <title id="music-title">Music</title>
+  <defs>
+    <linearGradient id="tile" x1="18" y1="6" x2="77" y2="90" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#dd7b9d"/><stop offset="0.48" stop-color="#bd527d"/><stop offset="1" stop-color="#873956"/>
+    </linearGradient>
+    <radialGradient id="light" cx="17" cy="9" r="91" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.24"/><stop offset="0.62" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rim" x1="16" y1="6" x2="80" y2="90" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.72"/><stop offset="0.5" stop-color="#ffffff" stop-opacity="0.12"/><stop offset="1" stop-color="#111526" stop-opacity="0.24"/>
+    </linearGradient>
+    <filter id="tile-shadow" x="0" y="0" width="96" height="96" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="2" stdDeviation="1.6" flood-color="#0b1020" flood-opacity="0.24"/>
+    </filter>
+    <filter id="object-shadow" x="-35%" y="-35%" width="170%" height="185%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="2" stdDeviation="1.5" flood-color="#131126" flood-opacity="0.25"/>
+    </filter>
+    <clipPath id="tile-clip"><rect x="6" y="6" width="84" height="84" rx="21"/></clipPath>
+    <linearGradient id="vinyl" x1="28" y1="25" x2="68" y2="74" gradientUnits="userSpaceOnUse"><stop stop-color="#44404e"/><stop offset="0.45" stop-color="#272332"/><stop offset="1" stop-color="#181620"/></linearGradient>
+    <linearGradient id="label" x1="37" y1="35" x2="58" y2="61" gradientUnits="userSpaceOnUse"><stop stop-color="#f9cad9"/><stop offset="1" stop-color="#d787a7"/></linearGradient>
+  </defs>
+  <rect x="6" y="6" width="84" height="84" rx="21" fill="url(#tile)" filter="url(#tile-shadow)"/>
+  <g clip-path="url(#tile-clip)"><rect x="6" y="6" width="84" height="84" fill="url(#light)"/></g>
+  <rect x="6.5" y="6.5" width="83" height="83" rx="20.5" fill="none" stroke="url(#rim)"/>
+  <g filter="url(#object-shadow)">
+    <circle cx="48" cy="49" r="28" fill="url(#vinyl)"/>
+    <circle cx="48" cy="49" r="24" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+    <circle cx="48" cy="49" r="20" fill="none" stroke="#ffffff" stroke-opacity="0.07"/>
+    <path d="M28.5 38A22 22 0 0 1 40 28.5M56 69.5A22 22 0 0 0 66 59" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="48" cy="49" r="12.5" fill="url(#label)"/>
+    <path d="M50 40V53.2C50 59 40 60 40 54.5C40 51.5 43.4 49.6 46.5 50.5V41.5L55.5 39V43L50 44.5" fill="#fff8fb"/>
+  </g>
+</svg>
