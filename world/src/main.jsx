@@ -224,7 +224,7 @@ function App() {
     if (getApp(value)) openApp(value); if (value === 'desktop') showDesktop(); setCommand('');
   };
   const openSearch = event => { searchTrigger.current = event.currentTarget; setSearchOpen(true); setBatteryOpen(false); };
-  const openSearchResult = app => openApp(app.id, app.id === 'resume' && /cert|credential/i.test(query) ? 'certifications' : undefined);
+  const openSearchResult = app => openApp(app.id, app.id === 'resume' ? /cert|credential/i.test(query) ? 'certifications' : /education/i.test(query) ? 'education' : undefined : undefined);
   const setResumeSection = section => setWindows(items => items.map(win => win.id === 'resume' ? { ...win, section } : win));
 
   const renderContent = (id, win) => {

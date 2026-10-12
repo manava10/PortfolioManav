@@ -7,7 +7,7 @@
 .cv-app h1, .cv-app h2, .cv-app h3, .cv-app p { margin: 0; }
 .cv-app a { text-decoration: none; }
 .cv-app button, .cv-app a { -webkit-tap-highlight-color: transparent; }
-.cv-app button:focus-visible, .cv-app a:focus-visible { outline: 3px solid #ab8fd0; outline-offset: 4px; }
+.cv-app button:focus-visible, .cv-app a:focus-visible, .cv-panel:focus-visible { outline: 3px solid #ab8fd0; outline-offset: 4px; }
 .cv-header { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-bottom: 16px; }
 .cv-header > div { min-width: 0; }
 .cv-header img { width: 58px; height: 58px; flex-shrink: 0; }
@@ -33,6 +33,22 @@
 .cv-milestones li::marker { color: #a386bd; }
 .cv-resume-link { display: inline-flex; align-items: center; gap: 10px; min-height: 41px; padding: 10px 13px; border-radius: 8px; color: #604080; background: #efe7f5; font-size: 13px; font-weight: 550; }
 .cv-resume-link:hover { background: #e6d9ef; }
+.cv-education-link { display: inline-flex; align-items: center; gap: 7px; border: 0; padding: 0; min-height: 36px; margin-top: 4px; background: transparent; color: var(--accent, #76519f); font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; }
+.cv-education-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.cv-education-list { display: grid; gap: 14px; }
+.cv-education-card { padding: 20px; border: 1px solid var(--line, #e6e1ed); border-radius: 13px; background: linear-gradient(115deg, #fff, #fcfafd); }
+.cv-education-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.cv-education-level { display: inline-flex; align-items: center; gap: 7px; color: var(--accent, #76519f); font-size: 11px; font-weight: 650; letter-spacing: .4px; }
+.cv-education-grade { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 5px 8px; padding: 5px 9px; background: #efe7f5; color: #604080; border-radius: 7px; font-size: 12px; font-variant-numeric: tabular-nums; }
+.cv-education-grade > span { font-size: 10px; }
+.cv-education-grade strong { font-weight: 650; }
+.cv-education-card h2 { font-size: 17px; font-weight: 650; line-height: 1.45; letter-spacing: -.25px; overflow-wrap: anywhere; }
+.cv-app .cv-education-qualification { margin-top: 6px; font-size: 14px; line-height: 1.65; color: #54455f; }
+.cv-app .cv-education-period { margin-top: 5px; font-size: 12px; line-height: 1.65; color: var(--muted, #656176); }
+.cv-education-details { display: grid; gap: 13px; margin-top: 17px; padding-top: 14px; border-top: 1px solid var(--line, #e6e1ed); }
+.cv-education-details h3 { font-size: 10px; font-weight: 650; letter-spacing: .6px; text-transform: uppercase; color: var(--muted, #656176); }
+.cv-education-details p { margin-top: 5px; color: #51495e; font-size: 13px; line-height: 1.75; }
+.cv-education-details .cv-skills { margin: 7px 0 0; }
 .cv-credential-list { display: grid; gap: 13px; }
 .cv-credential { border: 1px solid var(--line, #e6e1ed); border-radius: 13px; padding: 16px 20px 0; background: linear-gradient(115deg, #fff, #fcfafd); overflow: hidden; }
 .cv-credential-heading { display: flex; align-items: flex-start; gap: 14px; }
@@ -59,6 +75,11 @@
 .cv-credential-footer a:hover { color: #4e326e; text-decoration: underline; text-underline-offset: 3px; }
 .cv-credential-footer > span { color: var(--muted, #656176); font-size: 11px; }
 @container (max-width: 470px) {
+  .cv-tabs { width: 100%; }
+  .cv-tabs button { flex: 1; padding-inline: 8px; font-size: 12px; gap: 6px; }
+  .cv-count { display: none; }
+  .cv-education-card { padding: 17px 16px; }
+  .cv-education-card h2 { font-size: 16px; }
   .cv-header { padding-bottom: 18px; gap: 13px; }
   .cv-header h1 { font-size: 27px; }
   .cv-header img { width: 50px; height: 50px; }
@@ -75,8 +96,8 @@
 }
 @container (max-width: 310px) {
   .cv-tabs { width: 100%; }
-  .cv-tabs button { flex: 1; padding-inline: 8px; font-size: 12px; gap: 6px; }
-  .cv-tabs button > svg { width: 13px; }
+  .cv-tabs button { flex: 1; min-width: 0; padding-inline: 4px; font-size: 11px; gap: 4px; }
+  .cv-tabs button > svg { display: none; }
   .cv-credential { padding-inline: 13px; }
   .cv-credential-heading { gap: 10px; }
   .cv-credential-meta { flex-direction: column; align-items: flex-start; }

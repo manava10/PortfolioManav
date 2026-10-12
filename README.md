@@ -30,7 +30,7 @@ The production output is generated in `world/dist/`.
 - Projects: FoodFreaky and CIDA case studies.
 - Literature & Poetry: original poems with a focused reading view.
 - Music: seven S3-hosted favourites, optional local files, and a persistent mini player.
-- Résumé: experience, education, résumé PDF, and certification links.
+- Résumé: experience, a dedicated Education tab, original résumé PDF, and certification links.
 - Contact: email, LinkedIn, GitHub, and a form that opens an email draft.
 - Notes and Terminal: small personal corners to explore.
 

@@ -11,9 +11,9 @@ An interactive Mac-inspired personal desktop built with React and Vite. Visitors
 - Literature & Poetry: dedicated desktop app with poetry, prose/reflections, and reading notes. First poem: “Are we even friends?”, transcribed from Manav’s handwritten page dated 23 December 2024. Second poem: “A faithful goodbye” (display title drawn from its refrain), supplied directly in chat. Prose and reading notes await personal selections.
 - Terminal: help, whoami, clear, and commands to open apps.
 - Contact: email, LinkedIn, and GitHub links.
-- Résumé: career summary and full PDF, plus a Certifications tab with issuer cards, issue dates, skills, and credential links. About opens this tab directly; app search finds it using “certifications” or “credentials”.
+- Résumé: career summary and original PDF, an Education tab with all three qualifications, and a Certifications tab with issuer cards, issue dates, skills, and credential links. About opens Certifications directly; app search finds the relevant tab using “education”, “certifications”, or “credentials”.
 - Windows: drag on desktop, close, minimise, restore from dock, centre, maximize/restore, and resize from all edges or corners. Window options offer larger/smaller presets. Bounds keep controls within the desktop; resized content scrolls. Minimizing preserves app state. Mobile shows one active app fitted between the menu and dock.
-- Desktop: matched original SVG icons, compact dock, app search with Command/Ctrl+K and keyboard focus handling, wallpaper theme switch, clock, responsive layout, reduced-motion support.
+- Desktop: matched original SVG icons, a purple M-and-star favicon with SVG/ICO and Apple touch variants, compact dock, app search with Command/Ctrl+K and keyboard focus handling, wallpaper theme switch, clock, responsive layout, reduced-motion support.
 - Poetry reader: original poem text and Georgia typography on ivory paper, one poem at a time, library selection, previous/next navigation, and focus mode. Selecting a poem scrolls its reading area to the beginning without shifting the desktop.
 
 ## FoodFreaky
@@ -32,6 +32,12 @@ An interactive Mac-inspired personal desktop built with React and Vite. Visitors
 - Retrieval: document chunking, vector embeddings, similarity-based retrieval.
 - Generation: Google Gemini API using retrieved context.
 - Refinement: chunking and similarity-threshold tuning.
+
+## Education
+- Vellore Institute of Technology · Bachelor of Technology – BTech, Computer Science · September 2022 – May 2026 · Grade 8.8. Activity: Badminton. Visible skills: DSA and Problem Solving Using Python.
+- Sri Viswasanthi Educational Institutions · Matriculation (CBSE) · Grade A1, 96.2%. Activities: Elocution, Storytelling, Cricket, Cosmology. Skill: Mathematics.
+- Sri Viswasanthi Educational Institutions · Intermediate, Physics/Chemistry/Mathematics · Grade 95.6%. Activities: Yoga, Badminton, Cricket, Poetry, Hindi Debate, Speed Math.
+- Details match the education screenshot supplied on 13 October 2026. School dates and the four collapsed university skills were not shown and are left unspecified. The supplied résumé PDF remains the original document.
 
 ## Certifications
 - Microsoft Certified: Azure AI Fundamentals · Microsoft · issued May 2026 · credential ID ITS-50827269.

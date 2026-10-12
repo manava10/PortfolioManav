@@ -1,0 +1,30 @@
+export const EDUCATION = [
+  {
+    id: 'vit',
+    level: 'University',
+    institution: 'Vellore Institute of Technology',
+    qualification: 'Bachelor of Technology – BTech, Computer Science',
+    period: 'September 2022 – May 2026',
+    grade: '8.8',
+    activities: ['Badminton'],
+    skills: ['DSA', 'Problem Solving Using Python'],
+  },
+  {
+    id: 'matriculation',
+    level: 'Matriculation',
+    institution: 'Sri Viswasanthi Educational Institutions',
+    qualification: 'Matriculation (CBSE)',
+    grade: 'A1 · 96.2%',
+    activities: ['Elocution', 'Storytelling', 'Cricket', 'Cosmology'],
+    skills: ['Mathematics'],
+  },
+  {
+    id: 'intermediate',
+    level: 'Intermediate',
+    institution: 'Sri Viswasanthi Educational Institutions',
+    qualification: 'Intermediate · Physics, Chemistry & Mathematics',
+    grade: '95.6%',
+    activities: ['Yoga', 'Badminton', 'Cricket', 'Poetry', 'Hindi Debate', 'Speed Math'],
+    skills: [],
+  },
+];
