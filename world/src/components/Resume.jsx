@@ -16,6 +16,27 @@ const credentials = [
     destination: 'Credly',
   },
   {
+    id: 'postman-api',
+    title: 'Postman API Fundamentals Student Expert',
+    issuer: 'Postman',
+    issued: 'October 2025',
+    skills: ['API Testing', 'Postman API'],
+    url: 'https://badgr.com/public/assertions/7dntsEUMSIuMl4NGErPmGA',
+    action: 'View credential',
+    destination: 'Badgr',
+  },
+  {
+    id: 'blackbuck-mern',
+    title: 'BlackBuck FullStack Developer (MERN)',
+    issuer: 'TaPTaP by Blackbucks',
+    issued: 'May 2025',
+    credentialId: 'BBCC2025VIT000498',
+    skills: ['Full-Stack Development', 'MERN Stack'],
+    url: 'https://drive.google.com/file/d/1pNomyt670LE4ncMwDHqeXr3krs4vPKgc/view',
+    action: 'View certificate',
+    destination: 'Google Drive',
+  },
+  {
     id: '100xdevs',
     title: '100xDevs Full Stack with DevOps',
     issuer: '100xDevs',
@@ -28,9 +49,16 @@ const credentials = [
 ];
 
 function IssuerMark({ issuer }) {
-  return issuer === 'Microsoft' ? (
-    <span className="cv-issuer-mark cv-microsoft-mark" aria-hidden="true"><i /><i /><i /><i /></span>
-  ) : (
+  if (issuer === 'Microsoft') {
+    return <span className="cv-issuer-mark cv-microsoft-mark" aria-hidden="true"><i /><i /><i /><i /></span>;
+  }
+  if (issuer === 'Postman') {
+    return <img className="cv-issuer-mark" src="/icons/postman.svg" alt="" draggable="false" />;
+  }
+  if (issuer === 'TaPTaP by Blackbucks') {
+    return <span className="cv-issuer-mark cv-blackbuck-mark" aria-hidden="true">BB</span>;
+  }
+  return (
     <span className="cv-issuer-mark cv-100x-mark" aria-hidden="true"><b>100<span>x</span></b><strong>devs</strong></span>
   );
 }
@@ -99,7 +127,7 @@ export default function Resume({ section = 'overview', onSectionChange }) {
         <img src="/icons/resume.svg" alt="" draggable="false" />
       </header>
       <div className="cv-tabs" role="tablist" aria-label="Résumé sections">
-        {tabs.map(({ id, label, Icon }, index) => <button key={id} id={`${instanceId}-tab-${id}`} role="tab" type="button" aria-selected={activeSection === id} aria-controls={`${instanceId}-panel-${id}`} tabIndex={activeSection === id ? 0 : -1} onClick={() => onSectionChange?.(id)} onKeyDown={event => tabKeyDown(event, index)}><Icon size={15} strokeWidth={1.7} />{label}{id === 'certifications' && <span className="cv-count">2</span>}</button>)}
+        {tabs.map(({ id, label, Icon }, index) => <button key={id} id={`${instanceId}-tab-${id}`} role="tab" type="button" aria-selected={activeSection === id} aria-controls={`${instanceId}-panel-${id}`} tabIndex={activeSection === id ? 0 : -1} onClick={() => onSectionChange?.(id)} onKeyDown={event => tabKeyDown(event, index)}><Icon size={15} strokeWidth={1.7} />{label}{id === 'certifications' && <span className="cv-count">{credentials.length}</span>}</button>)}
       </div>
       <div id={`${instanceId}-panel-overview`} className="cv-panel cv-overview" role="tabpanel" tabIndex={0} aria-labelledby={`${instanceId}-tab-overview`} hidden={activeSection !== 'overview'}>
         <section className="cv-timeline-item"><span className="cv-year">2026 — PRESENT</span><div><h2>Digital Specialist Engineer Trainee</h2><h3>Infosys</h3><p>Java, Spring Boot, Spring Data JPA, Hibernate, REST APIs, and MySQL. Building layered backend services with validation, exception handling, and database persistence.</p></div></section>

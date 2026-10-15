@@ -5,7 +5,7 @@ An interactive Mac-inspired personal desktop built with React and Vite. Visitors
 
 ## Apps and interactions
 - About: a lavender introduction with professional background and direct paths to work, poetry, and contact.
-- Projects: a compact gallery and individual FoodFreaky and CIDA case studies, feature specifications, architecture illustrations, technology stacks, and outcomes from the supplied résumé.
+- Projects: a compact gallery and individual FoodFreaky, CIDA, and Dora The Explorer case studies, feature specifications, architecture illustrations, technology stacks, and outcomes from the supplied résumé or project source.
 - Music: seven personal favourites hosted on S3, plus optional local audio files. Includes song and artist labels, playlist selection, play/pause, previous/next, seeking, automatic continuation, and a persistent desktop mini player. Playback continues when its window is closed or minimized. Songs load only after the visitor presses play. Loading and unavailable states are shown in the player. All seven S3 files currently respond successfully to anonymous audio requests; configuration details are in MUSIC_SETUP.md.
 - Notes: clearly labelled sample quotes pending personal content.
 - Literature & Poetry: dedicated desktop app with poetry, prose/reflections, and reading notes. First poem: “Are we even friends?”, transcribed from Manav’s handwritten page dated 23 December 2024. Second poem: “A faithful goodbye” (display title drawn from its refrain), supplied directly in chat. Prose and reading notes await personal selections.
@@ -33,6 +33,14 @@ An interactive Mac-inspired personal desktop built with React and Vite. Visitors
 - Generation: Google Gemini API using retrieved context.
 - Refinement: chunking and similarity-threshold tuning.
 
+## Dora The Explorer
+- Repository: https://github.com/manava10/DoraTheExplorer
+- Purpose: a lightweight browser-based AI chat workspace.
+- Stack: React, Vite, JavaScript, and the Google Gemini REST API.
+- Features: streamed replies, Markdown rendering, model selection, new conversations, and a recent-conversations sidebar.
+- Persistence: up to 20 recent conversations and model preferences stored in browser localStorage.
+- Details checked against the repository README and src/main.jsx on 16 October 2026. File attachments and saved thoughts are marked as future work in that source and are not listed as completed features.
+
 ## Education
 - Vellore Institute of Technology · Bachelor of Technology – BTech, Computer Science · September 2022 – May 2026 · Grade 8.8. Activity: Badminton. Visible skills: DSA and Problem Solving Using Python.
 - Sri Viswasanthi Educational Institutions · Matriculation (CBSE) · Grade A1, 96.2%. Activities: Elocution, Storytelling, Cricket, Cosmology. Skill: Mathematics.
@@ -42,9 +50,13 @@ An interactive Mac-inspired personal desktop built with React and Vite. Visitors
 ## Certifications
 - Microsoft Certified: Azure AI Fundamentals · Microsoft · issued May 2026 · credential ID ITS-50827269.
 - Credential: https://www.credly.com/badges/06d5440c-41bf-4a8b-b11b-37cbb3192e18/public_url
+- Postman API Fundamentals Student Expert · Postman · issued October 2025. Skills: API Testing, Postman API. Details supplied in the user's screenshot; no credential ID was provided.
+- Credential: https://badgr.com/public/assertions/7dntsEUMSIuMl4NGErPmGA
+- BlackBuck FullStack Developer (MERN) · TaPTaP by Blackbucks · issued May 2025 · credential ID BBCC2025VIT000498. Skills: Full-Stack Development, MERN Stack. Details supplied in the user's screenshot.
+- Certificate: https://drive.google.com/file/d/1pNomyt670LE4ncMwDHqeXr3krs4vPKgc/view
 - 100xDevs Full Stack with DevOps · 100xDevs · issued August 2024, as supplied in the user's screenshot.
 - Certificate: https://drive.google.com/file/d/16h8duX2L0jUi780LuMv6Ul0_JZsYcLPT/view?usp=sharing
-- The Microsoft badge confirms Manav Mehta and a May 10, 2026 issue date. The supplied 100xDevs image has blank recipient and date fields; its card uses the user's screenshot details. Neither card adds an independent verification claim.
+- The Microsoft badge confirms Manav Mehta and a May 10, 2026 issue date. The supplied 100xDevs image has blank recipient and date fields; its card uses the user's screenshot details. The cards do not add an independent verification claim.
 
 ## Current status
 Local preview and production build are available. No hosted version has been published. Hosting awaits the user's approval after review. Personal quotes are pending; the seven supplied songs are configured and their S3 URLs respond successfully. Project facts are based on the user-provided résumé; the FoodFreaky domain was supplied directly by the user. Domain availability has not been verified.

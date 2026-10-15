@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import {
   ArrowLeft, ArrowRight, ArrowUpRight, Check, ChevronDown,
-  Database, FileText, Github, Layers3, Search, ShieldCheck,
+  Database, FileText, Github, History, Layers3, MessageCircle, Search, ShieldCheck,
   Sparkles, Utensils, Waypoints,
 } from 'lucide-react';
 import './projects.css';
@@ -39,6 +39,7 @@ const projects = [
     category: 'An experiment in useful AI',
     year: '2025',
     role: 'Document retrieval & contextual AI',
+    capabilities: ['Search', 'Summarize', 'Ask'],
     summary: 'Search, summarize, and ask contextual questions about uploaded documents.',
     detail: 'Cloud Intelligent Document Assistant makes uploaded documents easier to find and understand through search, summaries, and contextual question answering. Its retrieval pipeline supplies relevant document content to Google Gemini.',
     technologies: ['Python', 'FastAPI', 'RAG', 'Vector embeddings', 'Gemini API'],
@@ -56,27 +57,60 @@ const projects = [
       { Icon: Layers3, title: 'Thoughtful retrieval', body: 'Asynchronous processing, refined chunking, and tuned similarity thresholds.' },
     ],
   },
+  {
+    id: 'dora',
+    number: '03',
+    title: 'Dora The Explorer',
+    category: 'A calmer space for conversation',
+    year: '2026',
+    role: 'Frontend development · Gemini integration',
+    capabilities: ['Streaming', 'Markdown', 'Chat history'],
+    repository: 'https://github.com/manava10/DoraTheExplorer',
+    summary: 'A lightweight AI chat workspace with streaming replies, Markdown, and locally saved conversations.',
+    detail: 'Dora The Explorer is a browser-based AI chat application built with React, Vite, and the Google Gemini API. Replies arrive as a stream and render as formatted Markdown. A recent-conversations sidebar and model picker make it easy to return to an idea or start a new conversation.',
+    technologies: ['React', 'Vite', 'JavaScript', 'Gemini API', 'REST API', 'localStorage'],
+    specifications: [
+      ['Purpose', 'A lightweight workspace for open-ended conversations with Google Gemini.'],
+      ['Frontend', 'React and Vite, with a responsive conversation workspace and sidebar.'],
+      ['Core features', 'Streaming AI replies, Markdown rendering, model selection, and recent conversation history.'],
+      ['API integration', 'The browser sends conversation context to the Gemini Interactions API and renders streamed text as it arrives.'],
+      ['Local history', 'Up to 20 recent conversations, along with model preferences, are stored in the browser using localStorage.'],
+      ['Conversation controls', 'Start a new conversation or reopen a previous chat from the sidebar.'],
+    ],
+    features: [
+      { Icon: MessageCircle, title: 'A conversation that unfolds', body: 'Gemini replies stream into the workspace as they arrive, keeping the conversation moving.' },
+      { Icon: FileText, title: 'Room for a thoughtful answer', body: 'Markdown rendering gives replies readable headings, lists, code blocks, and tables.' },
+      { Icon: History, title: 'Pick up an earlier thought', body: 'Reopen recent conversations saved in this browser, or choose a Gemini model for your next chat.' },
+    ],
+  },
 ];
 
+const projectVisuals = {
+  foodfreaky: { label: 'FULL-STACK PRODUCT', name: <>Food<span>Freaky</span></>, Icon: Utensils, tagline: 'From campus. For campus.', steps: ['Browse', 'Order', 'Track'], flowLabel: 'Product flow: browse food, place an order, track its status', caption: 'Product journey · illustrated' },
+  cida: { label: 'AI DOCUMENT ASSISTANT', name: 'CIDA', Icon: Sparkles, tagline: 'Your documents. A conversation away.', steps: ['Documents', 'Retrieval', 'Answers'], flowLabel: 'Document flow: documents, retrieval, contextual answers', caption: 'Retrieval pipeline · illustrated' },
+  dora: { label: 'AI CONVERSATION WORKSPACE', name: 'Dora', Icon: MessageCircle, tagline: 'A little curiosity. A new conversation.', steps: ['Prompt', 'Stream', 'Continue'], flowLabel: 'Conversation flow: send a prompt, receive a streamed reply, continue the conversation', caption: 'Conversation journey · illustrated' },
+};
+
 function ProjectVisual({ project, compact = false }) {
-  const food = project.id === 'foodfreaky';
+  const visual = projectVisuals[project.id];
+  const Icon = visual.Icon;
   return (
     <div className={`work-visual work-visual-${project.id}${compact ? ' work-visual-compact' : ''}`}>
-      <div className="work-visual-label"><span>{food ? 'FULL-STACK PRODUCT' : 'AI DOCUMENT ASSISTANT'}</span><span>{project.number} / 02</span></div>
+      <div className="work-visual-label"><span>{visual.label}</span><span>{project.number} / {String(projects.length).padStart(2, '0')}</span></div>
       <div className="work-visual-brand">
-        <span className="work-brand-symbol" aria-hidden="true">{food ? <Utensils size={23} strokeWidth={1.6} /> : <Sparkles size={23} strokeWidth={1.5} />}</span>
-        <span className="work-wordmark">{food ? <>Food<span>Freaky</span></> : 'CIDA'}</span>
+        <span className="work-brand-symbol" aria-hidden="true"><Icon size={23} strokeWidth={1.6} /></span>
+        <span className="work-wordmark">{visual.name}</span>
       </div>
-      {!compact && <p className="work-visual-tagline">{food ? 'From campus. For campus.' : 'Your documents. A conversation away.'}</p>}
-      <div className="work-flow" aria-label={food ? 'Product flow: browse food, place an order, track its status' : 'Document flow: documents, retrieval, contextual answers'}>
-        {(food ? ['Browse', 'Order', 'Track'] : ['Documents', 'Retrieval', 'Answers']).map((step, index) => (
+      {!compact && <p className="work-visual-tagline">{visual.tagline}</p>}
+      <div className="work-flow" aria-label={visual.flowLabel}>
+        {visual.steps.map((step, index) => (
           <React.Fragment key={step}>
             {index > 0 && <ArrowRight size={14} strokeWidth={1.5} aria-hidden="true" />}
             <span><i aria-hidden="true">{index === 2 ? <Check size={13} /> : index + 1}</i>{step}</span>
           </React.Fragment>
         ))}
       </div>
-      <div className="work-diagram-caption">{food ? 'Product journey · illustrated' : 'Retrieval pipeline · illustrated'}</div>
+      <div className="work-diagram-caption">{visual.caption}</div>
     </div>
   );
 }
@@ -90,27 +124,33 @@ function ProjectCard({ project, onSelect }) {
         {project.id === 'foodfreaky' ? (
           <div className="work-card-outcomes"><span><strong>1,000+</strong> users</span><span><strong>₹6L+</strong> revenue</span></div>
         ) : (
-          <div className="work-card-outcomes work-card-capabilities"><span>Search</span><span>Summarize</span><span>Ask</span></div>
+          <div className="work-card-outcomes work-card-capabilities">{project.capabilities.map(capability => <span key={capability}>{capability}</span>)}</div>
         )}
         <p>{project.summary}</p>
         <div className="work-role">{project.role}</div>
         <div className="work-card-footer">
           <button className="work-card-button" onClick={() => onSelect(project.id)} aria-label={`Read ${project.title} case study`}>Explore the work <ArrowRight size={16} aria-hidden="true" /></button>
           {project.id === 'foodfreaky' && <a className="work-site-link" href="https://foodfreaky.in" target="_blank" rel="noreferrer" aria-label="Visit FoodFreaky website, opens in a new tab"><ArrowUpRight size={18} /></a>}
+          {project.repository && <a className="work-site-link" href={project.repository} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title} on GitHub, opens in a new tab`}><Github size={18} aria-hidden="true" /></a>}
         </div>
       </div>
     </article>
   );
 }
 
-function Architecture({ food }) {
+function Architecture({ project }) {
+  const food = project.id === 'foodfreaky';
+  const dora = project.id === 'dora';
   const stages = food
     ? [{ title: 'React', detail: 'Student experience', Icon: Layers3 }, { title: 'Node + Express', detail: 'Backend services · JWT', Icon: Waypoints }, { title: 'MongoDB', detail: 'Persistence', Icon: Database }]
-    : [{ title: 'Documents', detail: 'Asynchronous processing', Icon: FileText }, { title: 'Retrieval', detail: 'Chunks · embeddings · similarity', Icon: Search }, { title: 'Gemini API', detail: 'Contextual answers', Icon: Sparkles }];
+    : dora
+      ? [{ title: 'React + Vite', detail: 'Conversation workspace', Icon: MessageCircle }, { title: 'Gemini API', detail: 'Streaming responses', Icon: Sparkles }, { title: 'Browser history', detail: 'Conversations · localStorage', Icon: History }]
+      : [{ title: 'Documents', detail: 'Asynchronous processing', Icon: FileText }, { title: 'Retrieval', detail: 'Chunks · embeddings · similarity', Icon: Search }, { title: 'Gemini API', detail: 'Contextual answers', Icon: Sparkles }];
+  const description = food ? 'React frontend connects to Node and Express services with JWT authentication and MongoDB persistence' : dora ? 'React and Vite send prompts to Gemini, render streamed replies, and save conversations in browser localStorage' : 'FastAPI processes documents into chunks and embeddings, retrieves relevant content, and sends context to Gemini API';
   return (
     <section className="work-section">
-      <div className="work-section-heading"><h2>{food ? 'How it fits together' : 'From documents to answers'}</h2><span>Architecture overview</span></div>
-      <div className="work-architecture" aria-label={food ? 'React frontend connects to Node and Express services with JWT authentication and MongoDB persistence' : 'FastAPI processes documents into chunks and embeddings, retrieves relevant content, and sends context to Gemini API'}>
+      <div className="work-section-heading"><h2>{food ? 'How it fits together' : dora ? 'From a prompt to a reply' : 'From documents to answers'}</h2><span>Architecture overview</span></div>
+      <div className="work-architecture" aria-label={description}>
         {stages.map(({ title, detail, Icon }, index) => (
           <React.Fragment key={title}>
             {index > 0 && <ArrowRight className="work-architecture-arrow" size={17} aria-hidden="true" />}
@@ -118,13 +158,14 @@ function Architecture({ food }) {
           </React.Fragment>
         ))}
       </div>
-      <p className="work-architecture-note">{food ? 'Production deployment uses DigitalOcean, Cloudflare, and Netlify.' : 'Built with Python and FastAPI. Chunking and similarity thresholds were refined to improve retrieval relevance.'}</p>
+      <p className="work-architecture-note">{food ? 'Production deployment uses DigitalOcean, Cloudflare, and Netlify.' : dora ? 'Built with React, Vite, and the Gemini REST API. Conversation history and model preferences are saved in the browser.' : 'Built with Python and FastAPI. Chunking and similarity thresholds were refined to improve retrieval relevance.'}</p>
     </section>
   );
 }
 
 function CaseStudy({ project, onBack }) {
   const food = project.id === 'foodfreaky';
+  const dora = project.id === 'dora';
   return (
     <div className="work-case-study">
       <div className="work-case-navigation"><button className="work-back" onClick={onBack}><ArrowLeft size={16} aria-hidden="true" /> All projects</button><span>{project.number} / SELECTED WORK</span></div>
@@ -138,13 +179,13 @@ function CaseStudy({ project, onBack }) {
           <div><strong>Co-founder</strong><span>Backend & deployment</span></div>
         </div>
       ) : (
-        <div className="work-context-note"><Sparkles size={19} aria-hidden="true" /><p>Search, summaries, and answers grounded in the contents of uploaded documents.</p></div>
+        <div className="work-context-note"><Sparkles size={19} aria-hidden="true" /><p>{dora ? 'Streaming conversations, readable replies, and a place to pick up where you left off.' : 'Search, summaries, and answers grounded in the contents of uploaded documents.'}</p></div>
       )}
       <section className="work-section">
-        <div className="work-section-heading"><h2>{food ? 'What I built' : 'Inside the assistant'}</h2></div>
+        <div className="work-section-heading"><h2>{food ? 'What I built' : dora ? 'Inside the conversation' : 'Inside the assistant'}</h2></div>
         <div className="work-features">{project.features.map(({ Icon, title, body }) => <div className="work-feature" key={title}><Icon size={19} strokeWidth={1.6} aria-hidden="true" /><div><h3>{title}</h3><p>{body}</p></div></div>)}</div>
       </section>
-      <Architecture food={food} />
+      <Architecture project={project} />
       <section className="work-section">
         <div className="work-section-heading"><h2>The toolkit</h2></div>
         <div className="work-technologies" aria-label="Project technologies">{project.technologies.map(technology => <span key={technology}>{technology}</span>)}</div>
@@ -156,6 +197,7 @@ function CaseStudy({ project, onBack }) {
       <div className="work-case-footer">
         <button className="work-back" onClick={onBack}><ArrowLeft size={16} aria-hidden="true" /> Back to the workbench</button>
         {food && <a className="work-primary-link" href="https://foodfreaky.in" target="_blank" rel="noreferrer">Visit foodfreaky.in <ArrowUpRight size={16} aria-hidden="true" /></a>}
+        {project.repository && <a className="work-primary-link" href={project.repository} target="_blank" rel="noopener noreferrer"><Github size={16} aria-hidden="true" /> View on GitHub <ArrowUpRight size={16} aria-hidden="true" /></a>}
       </div>
     </div>
   );

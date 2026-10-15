@@ -27,7 +27,7 @@ The production output is generated in `world/dist/`.
 ## Portfolio apps
 
 - About: engineering, FoodFreaky, and a quieter creative side.
-- Projects: FoodFreaky and CIDA case studies.
+- Projects: FoodFreaky, CIDA, and Dora The Explorer case studies.
 - Literature & Poetry: original poems with a focused reading view.
 - Music: seven S3-hosted favourites, optional local files, and a persistent mini player.
 - Résumé: experience, a dedicated Education tab, original résumé PDF, and certification links.

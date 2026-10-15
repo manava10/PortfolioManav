@@ -58,6 +58,7 @@
 .cv-microsoft-mark i:nth-child(2) { background: #7fba00; }
 .cv-microsoft-mark i:nth-child(3) { background: #00a4ef; }
 .cv-microsoft-mark i:nth-child(4) { background: #ffb900; }
+.cv-blackbuck-mark { display: inline-flex; align-items: center; justify-content: center; border: 1px solid #dce2cc; border-radius: 9px; background: linear-gradient(135deg, #faf3dc, #e7eddf); color: #52613f; font-size: 15px; font-weight: 750; letter-spacing: -.6px; }
 .cv-100x-mark { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; color: #252328; line-height: .88; padding-left: 1px; }
 .cv-100x-mark b { font-size: 18px; font-weight: 800; letter-spacing: -.8px; }
 .cv-100x-mark b span { color: #e01d29; }

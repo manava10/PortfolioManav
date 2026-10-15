@@ -10,7 +10,7 @@ import './style.css';
 
 const APPS = [
   { id: 'about', name: 'About me', short: 'About', description: 'The engineer, founder, and poet behind the desktop', width: 720, height: 610 },
-  { id: 'projects', name: 'Projects', short: 'Projects', description: 'FoodFreaky, CIDA, and things I’ve built', width: 920, height: 660 },
+  { id: 'projects', name: 'Projects', short: 'Projects', description: 'FoodFreaky, CIDA, Dora The Explorer, and things I’ve built', width: 920, height: 660 },
   { id: 'literature', name: 'Literature & Poetry', short: 'Poetry', description: 'Poems, prose, and words that linger', width: 880, height: 680 },
   { id: 'music', name: 'Music', short: 'Music', description: 'A soundtrack for your time here', width: 680, height: 620 },
   { id: 'notes', name: 'Notes', short: 'Notes', description: 'A small place for thoughts', width: 620, height: 530 },

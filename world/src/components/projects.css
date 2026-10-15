@@ -29,6 +29,7 @@
 .work-visual { position: relative; padding: 23px 27px 19px; overflow: hidden; }
 .work-visual-foodfreaky { background: radial-gradient(ellipse at 100% 0, #ffd69b 0, transparent 61%), #fff0db; color: #75432d; }
 .work-visual-cida { background: radial-gradient(ellipse at 100% 0, #d8caee 0, transparent 62%), #eee8f8; color: #644782; }
+.work-visual-dora { background: radial-gradient(ellipse at 100% 0, #c9d8ef 0, transparent 62%), #e8eef9; color: #425a82; }
 .work-visual-label { display: flex; justify-content: space-between; gap: 12px; color: inherit; font-size: 10px; font-weight: 600; letter-spacing: .8px; }
 .work-visual-label span:last-child { white-space: nowrap; }
 .work-visual-brand { display: flex; align-items: center; gap: 13px; margin: 28px 0 2px; }
